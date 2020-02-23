@@ -19,7 +19,6 @@ brew 'wxmac'
 brew 'openssl'
 
 # Developement
-brew 'node'
 brew 'postgresql'
 brew 'yarn'
 brew 'terraform'
