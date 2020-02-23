@@ -43,7 +43,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +'PlugInstall --sync' +qa
 
 # Setup tmux
-rm -rf $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
+rm -r $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
 
 # Install https://github.com/rupa/z  (z - jump around)
 curl -fLo $HOME/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh

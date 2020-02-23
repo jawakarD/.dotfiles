@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
   alias dpt="mix do clean, compile --warnings-as-errors && mix test  && iex -S mix phx.server"
   alias startdp="cd /Users/jawakardurai/Documents/codemancers/dockup-pro && iex -S mix phx.server"
   alias vn="vi -c NERDTreeToggle"
+  alias tmux="TERM=screen-256color-bce tmux"
 
 . $HOME/z.sh
 
@@ -117,6 +118,8 @@ export PATH=$PATH:/Users/jawakardurai/Library/Python/3.7/bin/
 export PATH=$PATH:/Users/jawakardurai/Documents/jawakardurai/dockup-pro/cli/
 export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl)"
 export CFLAGS="-O2 -g -fno-stack-check"
+export LC_ALL=en_US.UTF-8
+export GPG_TTY=$(tty)
 eval "$(direnv hook zsh)"
 
 

@@ -18,6 +18,8 @@ Plug 'ajmwagar/vim-deus'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+color deus
+
 " Prettier config
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
