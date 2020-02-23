@@ -19,12 +19,14 @@ brew 'wxmac'
 brew 'openssl'
 
 # Developement
+brew 'asdf'
 brew 'postgresql'
 brew 'yarn'
 brew 'terraform'
 brew 'tmux'
 brew 'cmake'
 brew 'macvim'
+brew 'direnv'
 
 # Cask
 cask 'docker'

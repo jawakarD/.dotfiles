@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/codemancers/.oh-my-zsh"
+export ZSH="/Users/jawakardurai/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,12 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
   alias ls="exa --long --header --git"
   alias dpt="mix do clean, compile --warnings-as-errors && mix test  && iex -S mix phx.server"
-  alias startdp="cd /Users/codemancers/Documents/codemancers/dockup-pro && iex -S mix phx.server"
+  alias startdp="cd /Users/jawakardurai/Documents/codemancers/dockup-pro && iex -S mix phx.server"
   alias vn="vi -c NERDTreeToggle"
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
 
 . $HOME/z.sh
 
@@ -116,10 +112,14 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
-export PATH=$PATH:/Users/codemancers/terraform-exec
-export PATH=$PATH:/Users/codemancers/Library/Python/3.7/bin/
-export PATH=$PATH:/Users/codemancers/Documents/codemancers/dockup-pro/cli/
+export PATH=$PATH:/Users/jawakardurai/terraform-exec
+export PATH=$PATH:/Users/jawakardurai/Library/Python/3.7/bin/
+export PATH=$PATH:/Users/jawakardurai/Documents/jawakardurai/dockup-pro/cli/
 export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl)"
 export CFLAGS="-O2 -g -fno-stack-check"
 eval "$(direnv hook zsh)"
 
+
+. /usr/local/opt/asdf/asdf.sh
+
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
