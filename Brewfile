@@ -17,6 +17,7 @@ brew 'tree'
 brew 'autoconf'
 brew 'wxmac'
 brew 'openssl'
+brew 'gpg'
 
 # Developement
 brew 'asdf'
