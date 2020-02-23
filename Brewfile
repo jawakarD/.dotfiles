@@ -36,6 +36,7 @@ cask 'slack'
 cask 'virtualbox'
 cask 'vlc'
 cask 'firefox'
+cask 'atom'
 
 # Mac App Store
 mas 'Giphy Capture', id: 668208984
