@@ -58,7 +58,7 @@ asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf install erlang 22.1
 asdf global erlang 22.1
 
-asdf plugin add-elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf install elixir 1.9
 asdf global elixir 1.9
 
