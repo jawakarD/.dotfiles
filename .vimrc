@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'mhinz/vim-mix-format'
 Plug 'ajmwagar/vim-deus'
+Plug 'preservim/nerdcommenter'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -41,7 +42,6 @@ let g:syntastic_check_on_wq = 0
 
 " Javascript
 let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 " Elixir
 let g:mix_format_on_save = 1
