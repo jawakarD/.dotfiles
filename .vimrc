@@ -15,6 +15,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'mhinz/vim-mix-format'
 Plug 'ajmwagar/vim-deus'
 Plug 'preservim/nerdcommenter'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -22,8 +24,8 @@ call plug#end()
 color deus
 
 " Prettier config
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.tsx,*.ts PrettierAsync
 
 " Snippet config
 let g:UltiSnipsExpandTrigger='<C-j>'
@@ -54,8 +56,8 @@ set expandtab
 nnoremap <Leader>k :NERDTreeToggle<CR>
 set number
 
-set list
-set listchars=tab:>-
+"set list
+"set listchars=tab:>-
 " Relative line number
 nnoremap <silent> <Leader>l :let [&number, &relativenumber] =
   \ [!&number && (g:relativize_with_number \|\| !g:relativize_enabled),
