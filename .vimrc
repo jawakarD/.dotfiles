@@ -14,18 +14,43 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'mhinz/vim-mix-format'
 Plug 'ajmwagar/vim-deus'
+Plug 'pangloss/vim-javascript'
 Plug 'preservim/nerdcommenter'
 Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'peitalin/vim-jsx-typescript'
+
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+" coc extensions
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+
+"------------------------ VIM TSX ------------------------
+" by default, if you open tsx file, neovim does not show syntax colors
+" vim-tsx will do all the coloring for jsx in the .tsx file
+Plug 'ianks/vim-tsx'
+
+"------------------------ VIM TSX ------------------------
+" by default, if you open tsx file, neovim does not show syntax colors
+" typescript-vim will do all the coloring for typescript keywords
+Plug 'leafgarland/typescript-vim'
+
+"------------------------ THEME ------------------------
+" most importantly you need a good color scheme to write good code :D
+Plug 'dikiaap/minimalist'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 color deus
 
-" Prettier config
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.tsx,*.ts PrettierAsync
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
+"Prettier config
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.tsx,*.ts PrettierAsync
 
 " Snippet config
 let g:UltiSnipsExpandTrigger='<C-j>'
@@ -44,6 +69,14 @@ let g:syntastic_check_on_wq = 0
 
 " Javascript
 let g:syntastic_javascript_checkers=['eslint']
+
+" Typescript
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
 " Elixir
 let g:mix_format_on_save = 1
