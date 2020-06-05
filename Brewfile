@@ -18,6 +18,10 @@ brew 'autoconf'
 brew 'wxmac'
 brew 'openssl'
 brew 'gpg'
+brew 'openssh-server'
+brew 'gpg'
+brew 'wget'
+brew 'mkcret'
 
 # Developement
 brew 'asdf'
@@ -28,6 +32,9 @@ brew 'tmux'
 brew 'cmake'
 brew 'macvim'
 brew 'direnv'
+brew 'deno'
+brew 'nss'
+brew 'postgis'
 
 # Cask
 cask 'docker'
@@ -37,6 +44,8 @@ cask 'virtualbox'
 cask 'vlc'
 cask 'firefox'
 cask 'atom'
+cask 'postico'
+cask 'android-file-transfer'
 
 # Mac App Store
 mas 'Giphy Capture', id: 668208984

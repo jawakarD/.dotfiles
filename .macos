@@ -226,10 +226,10 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-# defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+ defaults write com.apple.screencapture location -string "${HOME}/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-# defaults write com.apple.screencapture type -string "png"
+ defaults write com.apple.screencapture type -string "png"
 
 # Disable shadow in screenshots
 # defaults write com.apple.screencapture disable-shadow -bool true
@@ -266,7 +266,7 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 #defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
-# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 # defaults write com.apple.finder ShowStatusBar -bool true
@@ -406,9 +406,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-delay -float 1
 # Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
+#defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
