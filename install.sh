@@ -17,6 +17,9 @@ brew bundle
 # Node installs
 node i -g eslint
 
+#install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 # Install zsh-syntax-highlight
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -44,6 +47,10 @@ ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
+
+# setup atom 
+rm -rf $HOME/.atom/packages.cson
+ln -s $HOME/.dotfiles/apps/atom/packages.cson $HOME/.atom/packages.cson
 
 # Setup tmux
 rm -r $HOME/.tmux.conf

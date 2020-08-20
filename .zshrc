@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export ZSH_DISABLE_COMPFIX=true
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jawakardurai/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -69,9 +70,9 @@ ZSH_THEME="sunaku"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-zsh-syntax-highlighting
-zsh-autosuggestions
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,11 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-  alias ls="exa --long --header --git"
-  alias dpt="mix do clean, compile --warnings-as-errors && mix test  && iex -S mix phx.server"
-  alias startdp="cd /Users/jawakardurai/Documents/codemancers/dockup-pro && iex -S mix phx.server"
-  alias vn="vi -c NERDTreeToggle"
-  alias tmux="TERM=screen-256color-bce tmux"
+alias ls="exa --long --header --git"
+alias dpt="mix do clean, compile --warnings-as-errors && mix test  && iex -S mix phx.server"
+alias startdp="cd $HOME/Documents/codemancers/dockup-pro && iex -S mix phx.server"
+alias vn="vi -c NERDTreeToggle"
+alias tmux="TERM=screen-256color-bce tmux"
 
 . $HOME/z.sh
 
@@ -114,9 +115,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
-export PATH=$PATH:/Users/jawakardurai/terraform-exec
-export PATH=$PATH:/Users/jawakardurai/Library/Python/3.7/bin/
-export PATH=$PATH:/Users/jawakardurai/Documents/jawakardurai/dockup-pro/cli/
+export PATH=$PATH:$HOME/terraform-exec
+export PATH=$PATH:$HOME/Library/Python/3.7/bin/
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -132,3 +132,18 @@ eval "$(direnv hook zsh)"
 . /usr/local/opt/asdf/asdf.sh
 
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+export PATH=$HOME/.asdf/shims:$PATH
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH=$HOME/user/bin/local:$PATH

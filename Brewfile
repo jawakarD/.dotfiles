@@ -22,6 +22,7 @@ brew 'openssh-server'
 brew 'gpg'
 brew 'wget'
 brew 'mkcret'
+brew 'pyenv'
 
 # Developement
 brew 'asdf'
@@ -46,6 +47,8 @@ cask 'firefox'
 cask 'atom'
 cask 'postico'
 cask 'android-file-transfer'
+cask 'visual-studio-code'
+cask 'postman'
 
 # Mac App Store
 mas 'Giphy Capture', id: 668208984
