@@ -11,7 +11,7 @@ Plug 'honza/vim-snippets'
 Plug 'prettier/vim-prettier'
 Plug 'valloric/youcompleteme'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'mhinz/vim-mix-format'
 Plug 'ajmwagar/vim-deus'
 Plug 'pangloss/vim-javascript'
@@ -24,11 +24,14 @@ Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 Plug 'Chiel92/vim-autoformat'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'dense-analysis/ale'
+Plug 'ElmCast/elm-vim'
 
-"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " coc extensions
-"let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 
 "------------------------ VIM TSX ------------------------
 " by default, if you open tsx file, neovim does not show syntax colors
@@ -47,20 +50,40 @@ Plug 'airblade/vim-gitgutter'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+" Colors
 color deus
 
-"let g:coc_global_extensions = [
-  "\ 'coc-tsserver'
-  "\ ]
+set t_Co=256
+set termguicolors
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark  " Setting dark mode
+colorscheme deus
+
+let g:indentLine_color_term = 086
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+let g:coc_global_extensions = [
+      \ 'coc-tsserver'
+      \ ]
 
 " Auto formatting
-"Prettier config
+" Prettier config
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.json,*.css,*.scss,*.less,*.graphql,*.tsx,*.ts PrettierAsync
 
+let g:ale_fixers = {
+      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \   'javascript': ['eslint'],
+      \   'ruby': ['rubocop'],
+      \}
+
+" let g:ale_fix_on_save = 1
+
 " Autoformatting
 au BufWrite * :Autoformat
-autocmd FileType vim,tex let b:autoformat_autoindent=0
 
 " Snippet config
 let g:UltiSnipsExpandTrigger='<C-j>'
@@ -70,33 +93,35 @@ let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 " Ctrl P
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
+      \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ }
+
+set laststatus=2
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " Javascript
-let g:syntastic_javascript_checkers=['eslint']
+" let g:syntastic_javascript_checkers=['eslint']
 
 " Typescript
 augroup SyntaxSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+  autocmd!
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+" let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
 " Elixir
-let g:mix_format_on_save = 1
+let g:mix_format_on_save = 0
 
 let mapleader = "\\"
 
@@ -106,12 +131,11 @@ set expandtab
 nnoremap <Leader>k :NERDTreeToggle<CR>
 set number
 syntax on
-filetype plugin indent on
 filetype on
 filetype indent on
 
 " Ruby
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal expandtab shiftwidth=3 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 
 noremap <Leader>\ :Commentary<CR>
@@ -122,8 +146,8 @@ set listchars=tab:>-
 
 " Relative line number
 nnoremap <silent> <Leader>l :let [&number, &relativenumber] =
-  \ [!&number && (g:relativize_with_number \|\| !g:relativize_enabled),
-  \ !&relativenumber && g:relativize_enabled]<CR>
+      \ [!&number && (g:relativize_with_number \|\| !g:relativize_enabled),
+      \ !&relativenumber && g:relativize_enabled]<CR>
 noremap <silent> <Leader>rl :RelativizeToggle<CR>
 set relativenumber
 
@@ -136,3 +160,24 @@ map ] :NERDTreeFind<cr>
 nnoremap <Leader>0 :bn<CR>
 nnoremap <Leader>9 :bp<CR>
 nnoremap <Leader>- :bn<CR>
+
+" function! GitBranch()
+"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" endfunction
+
+" function! StatuslineGit()
+"   let l:branchname = GitBranch()
+"   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+" endfunction
+
+set statusline=
+" set statusline+=%#PmenuSel#
+" set statusline+=%{StatuslineGit()}
+" set statusline+=%#LineNr#
+set statusline+=%#PmenuSel#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+
+hi StatusLine ctermbg=green ctermfg=green
+hi Conceal ctermfg=green

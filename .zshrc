@@ -103,10 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="exa --long --header --git"
-alias dpt="mix do clean, compile --warnings-as-errors && mix test  && iex -S mix phx.server"
-alias startdp="cd $HOME/Documents/codemancers/dockup-pro && iex -S mix phx.server"
 alias vn="vi -c NERDTreeToggle"
 alias tmux="TERM=screen-256color-bce tmux"
+alias front="cd $HOME/repos/frontend && . ./.envrc && yarn start"
 
 . $HOME/z.sh
 
@@ -140,10 +139,21 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+export PATH=$HOME/user/bin/local:$PATH
+
+export GIT_EDITOR=vim
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/jawakar/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jawakar/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/jawakar/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jawakar/google-cloud-sdk/completion.zsh.inc'; fi
 
-export PATH=$HOME/user/bin/local:$PATH
+# Node lib set
+
+# bun completions
+[ -s "/Users/jawakar/.bun/_bun" ] && source "/Users/jawakar/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/jawakar/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

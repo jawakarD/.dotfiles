@@ -5,7 +5,7 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 # Binaries
-brew 'awscli'
+/* brew 'awscli' */
 brew 'bash' # Latest Bash version
 brew 'bat' # "cat" on steroids
 brew 'exa' # "ls" on steroids
@@ -38,14 +38,14 @@ brew 'nss'
 brew 'postgis'
 
 # Cask
-cask 'docker'
+/* cask 'docker' */
 cask 'google-chrome'
 cask 'slack'
 cask 'virtualbox'
 cask 'vlc'
 cask 'firefox'
 cask 'atom'
-cask 'postico'
+/* cask 'postico' */
 cask 'android-file-transfer'
 cask 'visual-studio-code'
 cask 'postman'
