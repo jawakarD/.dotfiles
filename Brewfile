@@ -4,12 +4,10 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
-# Binaries
-/* brew 'awscli' */
-brew 'bash' # Latest Bash version
-brew 'bat' # "cat" on steroids
-brew 'exa' # "ls" on steroids
-brew 'coreutils' # Those that come with macOS are outdated
+brew 'bash'
+brew 'bat'
+brew 'exa'
+brew 'coreutils'
 brew 'git'
 brew 'grep'
 brew 'mas'
@@ -24,7 +22,6 @@ brew 'wget'
 brew 'mkcret'
 brew 'pyenv'
 
-# Developement
 brew 'asdf'
 brew 'postgresql'
 brew 'yarn'
@@ -37,18 +34,15 @@ brew 'deno'
 brew 'nss'
 brew 'postgis'
 
-# Cask
-/* cask 'docker' */
 cask 'google-chrome'
 cask 'slack'
 cask 'virtualbox'
 cask 'vlc'
 cask 'firefox'
 cask 'atom'
-/* cask 'postico' */
+
 cask 'android-file-transfer'
 cask 'visual-studio-code'
 cask 'postman'
 
-# Mac App Store
 mas 'Giphy Capture', id: 668208984

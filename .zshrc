@@ -157,3 +157,6 @@ if [ -f '/Users/jawakar/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/j
 # Bun
 export BUN_INSTALL="/Users/jawakar/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Add node binaries to path
+export PATH="$PATH:$(yarn global bin)"
