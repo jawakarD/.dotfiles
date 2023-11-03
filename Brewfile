@@ -39,7 +39,6 @@ cask 'slack'
 cask 'virtualbox'
 cask 'vlc'
 cask 'firefox'
-cask 'atom'
 
 cask 'android-file-transfer'
 cask 'visual-studio-code'

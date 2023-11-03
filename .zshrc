@@ -106,6 +106,7 @@ alias ls="exa --long --header --git"
 alias vn="vi -c NERDTreeToggle"
 alias tmux="TERM=screen-256color-bce tmux"
 alias front="cd $HOME/repos/frontend && . ./.envrc && yarn start"
+alias standup="open https://us02web.zoom.us/j/2182096407"
 
 . $HOME/z.sh
 
@@ -121,6 +122,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
 
 export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl)"
 export CFLAGS="-O2 -g -fno-stack-check"
@@ -128,9 +130,9 @@ export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
 eval "$(direnv hook zsh)"
 
-. /usr/local/opt/asdf/asdf.sh
+# . /usr/local/opt/asdf/asdf.sh
 
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+# . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 export PATH=$HOME/.asdf/shims:$PATH
 
@@ -160,3 +162,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Add node binaries to path
 export PATH="$PATH:$(yarn global bin)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
