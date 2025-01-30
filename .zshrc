@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa --long --header --git"
+alias ls="lsd --long --header --git"
 alias vn="vi -c NERDTreeToggle"
 alias tmux="TERM=screen-256color-bce tmux"
 alias front="cd $HOME/repos/frontend && . ./.envrc && yarn start"
@@ -111,7 +111,7 @@ alias standup="open https://us02web.zoom.us/j/2182096407"
 . $HOME/z.sh
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"

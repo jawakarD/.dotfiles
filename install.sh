@@ -20,9 +20,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # Install zsh-autosuggestion
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# Install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
@@ -56,7 +53,8 @@ curl -fLo $HOME/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 # Setup asdf plugins
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring\n
-asdf install nodejs 16.17.1
+asdf install nodejs 22.12.00
+asdf global nodejs 22.12.00
 
 # asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 # asdf install erlang 22.1
@@ -69,8 +67,8 @@ asdf install nodejs 16.17.1
 # Node installs
 node i -g eslint
 
-curl https://bun.sh/install | bash
+# curl https://bun.sh/install | bash
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-# source .macos
+ source .macos
